@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,12 +184,45 @@
     <Compile Include="Migrations\202011101859420_AddedCustomersDataObject.Designer.cs">
       <DependentUpon>202011101859420_AddedCustomersDataObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011102022536_AddedTransactionToDataLayer.cs" />
+    <Compile Include="Migrations\202011102022536_AddedTransactionToDataLayer.Designer.cs">
+      <DependentUpon>202011102022536_AddedTransactionToDataLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011102036489_FormattingForCurrency.cs" />
+    <Compile Include="Migrations\202011102036489_FormattingForCurrency.Designer.cs">
+      <DependentUpon>202011102036489_FormattingForCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011102042339_TookAwayNullabilityOfIDsinTransaction.cs" />
+    <Compile Include="Migrations\202011102042339_TookAwayNullabilityOfIDsinTransaction.Designer.cs">
+      <DependentUpon>202011102042339_TookAwayNullabilityOfIDsinTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011102120094_ForgetCurrencyFormattingForNow.cs" />
+    <Compile Include="Migrations\202011102120094_ForgetCurrencyFormattingForNow.Designer.cs">
+      <DependentUpon>202011102120094_ForgetCurrencyFormattingForNow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011102124425_AddedTimestampToTransaction.cs" />
+    <Compile Include="Migrations\202011102124425_AddedTimestampToTransaction.Designer.cs">
+      <DependentUpon>202011102124425_AddedTimestampToTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011102130083_AddedTimestampToTransaction2.cs" />
+    <Compile Include="Migrations\202011102130083_AddedTimestampToTransaction2.Designer.cs">
+      <DependentUpon>202011102130083_AddedTimestampToTransaction2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011102138277_AddedTimestampToTransaction3.cs" />
+    <Compile Include="Migrations\202011102138277_AddedTimestampToTransaction3.Designer.cs">
+      <DependentUpon>202011102138277_AddedTimestampToTransaction3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011102139308_AddedTimestampToTransaction4.cs" />
+    <Compile Include="Migrations\202011102139308_AddedTimestampToTransaction4.Designer.cs">
+      <DependentUpon>202011102139308_AddedTimestampToTransaction4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -258,6 +292,8 @@
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Transaction\Index.cshtml" />
+    <Content Include="Views\Transaction\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +317,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011101859420_AddedCustomersDataObject.resx">
       <DependentUpon>202011101859420_AddedCustomersDataObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102022536_AddedTransactionToDataLayer.resx">
+      <DependentUpon>202011102022536_AddedTransactionToDataLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102036489_FormattingForCurrency.resx">
+      <DependentUpon>202011102036489_FormattingForCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102042339_TookAwayNullabilityOfIDsinTransaction.resx">
+      <DependentUpon>202011102042339_TookAwayNullabilityOfIDsinTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102120094_ForgetCurrencyFormattingForNow.resx">
+      <DependentUpon>202011102120094_ForgetCurrencyFormattingForNow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102124425_AddedTimestampToTransaction.resx">
+      <DependentUpon>202011102124425_AddedTimestampToTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102130083_AddedTimestampToTransaction2.resx">
+      <DependentUpon>202011102130083_AddedTimestampToTransaction2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102138277_AddedTimestampToTransaction3.resx">
+      <DependentUpon>202011102138277_AddedTimestampToTransaction3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011102139308_AddedTimestampToTransaction4.resx">
+      <DependentUpon>202011102139308_AddedTimestampToTransaction4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
