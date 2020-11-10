@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
@@ -63,8 +64,45 @@ namespace GeneralStore.MVC.Controllers
             return RedirectToAction("Index");
         }
         //GET: Customer/Edit/{id}
+        public ActionResult Edit(int? id)
+        {
+            if (id is null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = _db.Customers.Find(id);
+            if (customer is null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+        }
         //POST: Customer/Edit/{id}
-
+        [HttpPost,ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Entry(customer).State = EntityState.Modified;
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(customer);
+        }
         //GET: Customer/Detail/{id}
+        public ActionResult Details(int? id)
+        {
+            if (id is null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = _db.Customers.Find(id);
+            if (customer is null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+        }
     }
 }
